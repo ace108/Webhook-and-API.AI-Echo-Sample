@@ -20,6 +20,7 @@ restService.post("/echo", function(req, res) {
 //    req.body.result.parameters.echoText
 //      ? req.body.result.parameters.echoText
 //      : "Seems like some problem. Speak again lah.";
+// Ref: https://dialogflow.com/docs/fulfillment
   var speech = 
     req.body.result && 
     req.body.result.parameters && 
