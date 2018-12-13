@@ -33,6 +33,7 @@ restService.post("/echo", function(req, res) {
 //    source: "webhook-echo-sample"
 //  });
 // Ref: https://productforums.google.com/forum/#!topic/dialogflow/zWLIMnQIOP0  
+// https://github.com/dialogflow/dialogflow-fulfillment-nodejs/blob/master/src/v2-agent.js  
   return res.json({
     fulfillmentText: speech,
     source: "webhook-echo-sample"
