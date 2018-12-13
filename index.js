@@ -35,9 +35,23 @@ restService.post("/echo", function(req, res) {
 // Ref: https://productforums.google.com/forum/#!topic/dialogflow/zWLIMnQIOP0  
 // https://github.com/dialogflow/dialogflow-fulfillment-nodejs/blob/master/src/v2-agent.js  
   return res.json({
-    fulfillmentText: speech,
-    source: "webhook-echo-sample"
-  });
+//    fulfillmentText: speech,
+//    source: "webhook-echo-sample"
+//  });
+
+    
+//{
+  "fulfillmentText": "Text AAAresponse",
+  "fulfillmentMessages": [
+    {
+      "text": {
+        "text": ["Text BBB response"]
+      }
+    }
+  ],
+  "source": "<Text CCC response>"
+}
+
 });
 
 restService.post("/audio", function(req, res) {
