@@ -24,8 +24,8 @@ restService.post("/echo", function(req, res) {
 //    speech: speech,
 //    displayText: speech,
 //    source: "webhook-echo-sample"
+//  });
 // Ref: https://productforums.google.com/forum/#!topic/dialogflow/zWLIMnQIOP0  
-  });
   return res.json({
     fulfillmentText: speech,
     source: "webhook-echo-sample"
