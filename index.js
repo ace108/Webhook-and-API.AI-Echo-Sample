@@ -1,5 +1,40 @@
 "use strict";
 
+// Imports the Dialogflow library
+const dialogflow = require('dialogflow');
+
+// Import the JSON to gRPC struct converter
+const structjson = require('./structjson.js');
+
+// Instantiates a sessison client
+const sessionClient = new dialogflow.SessionsClient();
+
+// The path to identify the agent that owns the created intent.
+const sessionPath = sessionClient.sessionPath(projectId, sessionId);
+
+// The text query request.
+const request = {
+  session: sessionPath,
+  queryInput: {
+    event: {
+      name: eventName,
+      parameters: structjson.jsonToStructProto({foo: 'bar'}),
+      languageCode: languageCode,
+    },
+  },
+};
+
+sessionClient
+  .detectIntent(request)
+  .then(responses => {
+    console.log('Detected intent');
+    logQueryResult(sessionClient, responses[0].queryResult);
+  })
+  .catch(err => {
+    console.error('ERROR:', err);
+  });
+/////////////////////////
+
 const express = require("express");
 const bodyParser = require("body-parser");
 
