@@ -27,6 +27,13 @@ restService.post("/echo", function(req, res) {
     req.body.result.parameters.echoText
       ? response 
       : "Seems like some problem. Speak again hor."    
+  var speech = 
+    req.body.result && 
+    req.body.result.parameters && 
+    req.body.result.parameters.leads 
+      ? "talking about the leads boss? You had " 
+      : "Seems like some problem. Speak again."
+  
 //  return res.json({
 //    speech: speech,
 //    displayText: speech,
